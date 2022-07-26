@@ -6,14 +6,27 @@
 }
 
 body{
-    background: url(https://raw.githubusercontent.com/Sumeet16/FindWeather/main/public/images/2923100_1.png);
+    background-color: #666;
 }
 .container{
+    
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
+      
+.container::before{
+   content: '';
+   display: block;
+   background: inherit;
+   position: absolute;
+   width: 100%; height: 100%;
+   left: 0; top: 0;
+   filter: blur(15px);
+   transform: scale(1.2,1.4);   
+}
+
 
 .container img{
     width: 100%;
@@ -24,7 +37,7 @@ body{
     position: absolute;
     top: 40px;
     right: 40px;
-    width: 300px;
+    width: 600px;
     height: 40px;
     outline: none;
     border: none;
@@ -79,6 +92,7 @@ svg{
     font-weight: 900;
     color: #fff;
     line-height: 80px;
+    font-display: center;
 }
 
 .disc{
@@ -159,3 +173,36 @@ svg{
     bottom: 50px;
     transition: 0.5s;
 }
+
+.future-forecast {
+    display: flex;
+    justify-content: center;
+    margin: 300px 300px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+}
+
+.weather-day{
+    border-radius: 15px;
+    background: rgba(53, 34, 122, 0.2);
+    padding: 10px;
+    margin: 13px;
+}
+
+ 
+.future-forecast .weather-day .day{
+    padding: 10px 15px;
+    background: #36363b;
+    border-radius: 50px;
+    text-align: center;
+    margin: 10px;
+}
+
+.future-forecast .weather-day .temp-item{
+    font-weight: 100;
+    font-size: 20px;
+    padding: 10px;
+}
+
